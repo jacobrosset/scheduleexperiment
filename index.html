@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Schedule and Forecast</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Employee Information</h1>
+    <!-- Container for the employee table -->
+    <div id="employeeTableContainer">
+        <!-- Employee details table will be dynamically inserted here by employee_table.js -->
+    </div>
+
+    <h1>Employee Schedule</h1>
+    <table id="scheduleTable">
+        <thead>
+            <tr id="scheduleDateRow"></tr> <!-- Placeholder for the date row -->
+            <tr>
+                <th>Employee Name</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+                <th>Total Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Schedule data will be generated here -->
+        </tbody>
+    </table>
+
+    <h1>Breaks and Meal Periods</h1>
+    <table id="breaksTable">
+        <thead>
+            <tr id="breaksDateRow"></tr> <!-- Placeholder for the date row -->
+            <tr>
+                <th>Employee Name</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+                <th>Total Meal Period Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Breaks data will be generated here -->
+        </tbody>
+    </table>
+
+    <!-- Container for forecast tables -->
+    <h1>Forecast Tables</h1>
+    <div id="forecastContainer">
+        <!-- Forecast tables will be dynamically inserted here by forecast.js -->
+    </div>
+
+    <!-- Container for overtime volunteers ranking -->
+    <h1>Overtime Volunteers</h1>
+    <div id="overtimeVolunteerContainer">
+        <!-- Overtime volunteer table will be generated here by extra_time_volunteer.js -->
+    </div>
+
+    <!-- Script files -->
+    <script src="data.js"></script>
+    <script src="employee_table.js"></script> <!-- Employee table logic -->
+    <script src="forecast.js"></script>
+    <script src="extra_time_volunteer.js"></script> <!-- Overtime volunteers logic -->
+    <script src="breaks.js"></script> <!-- Breaks logic -->
+    <script src="script.js"></script>
+</body>
+</html>

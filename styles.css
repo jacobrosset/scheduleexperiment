@@ -1,0 +1,38 @@
+/* General table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+/* Header styling for dates and days of the week */
+th {
+    background-color: lightgrey;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Cell styling */
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Total hours cell styling */
+.total-hours {
+    background-color: lightgrey;
+}
+
+
+/* Styling for time off */
+.time-off {
+background-color: lightcoral;
+padding: 10px;
+text-align: center;
+font-weight: bold;
+}
