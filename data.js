@@ -1,21 +1,26 @@
 console.log("data.js is loaded!");
 
 // Availability data for employees, now including employee_name for easier reference
+// Availability data for employees, now including specific dates
 const availabilityData = [
-    {"end_time": "17:00:00.000000", "start_time": "09:00:00.000000", "day_of_week": "Monday", "employee_id": 1, "employee_name": "Alice Johnson"},
-    {"end_time": "17:00:00.000000", "start_time": "09:00:00.000000", "day_of_week": "Wednesday", "employee_id": 1, "employee_name": "Alice Johnson"},
-    {"end_time": "13:00:00.000000", "start_time": "09:00:00.000000", "day_of_week": "Friday", "employee_id": 1, "employee_name": "Alice Johnson"},
-    {"end_time": "15:00:00.000000", "start_time": "10:00:00.000000", "day_of_week": "Tuesday", "employee_id": 2, "employee_name": "Bob Smith"},
-    {"end_time": "18:00:00.000000", "start_time": "12:00:00.000000", "day_of_week": "Thursday", "employee_id": 2, "employee_name": "Bob Smith"},
-    {"end_time": "13:00:00.000000", "start_time": "09:00:00.000000", "day_of_week": "Saturday", "employee_id": 2, "employee_name": "Bob Smith"},
-    {"end_time": "18:00:00.000000", "start_time": "12:00:00.000000", "day_of_week": "Thursday", "employee_id": 3, "employee_name": "Charlie Evans"},
-    {"end_time": "12:00:00.000000", "start_time": "08:00:00.000000", "day_of_week": "Monday", "employee_id": 3, "employee_name": "Charlie Evans"},
-    {"end_time": "16:00:00.000000", "start_time": "10:00:00.000000", "day_of_week": "Sunday", "employee_id": 3, "employee_name": "Charlie Evans"},
-    {"end_time": "17:00:00.000000", "start_time": "13:00:00.000000", "day_of_week": "Wednesday", "employee_id": 4, "employee_name": "Richard Brown"},
-    {"end_time": "17:00:00.000000", "start_time": "09:00:00.000000", "day_of_week": "Friday", "employee_id": 4, "employee_name": "Richard Brown"},
-    {"end_time": "18:00:00.000000", "start_time": "14:00:00.000000", "day_of_week": "Tuesday", "employee_id": 5, "employee_name": "Emma Taylor"},
-    {"end_time": "17:00:00.000000", "start_time": "09:00:00.000000", "day_of_week": "Thursday", "employee_id": 5, "employee_name": "Emma Taylor"},
-    {"end_time": "16:00:00.000000", "start_time": "10:00:00.000000", "day_of_week": "Saturday", "employee_id": 5, "employee_name": "Emma Taylor"}
+    {"employee_id": 1, "employee_name": "Alice Johnson", "day_of_week": "Monday", "start_time": "09:00:00", "end_time": "17:00:00", "date": "2024-10-07"},
+    {"employee_id": 1, "employee_name": "Alice Johnson", "day_of_week": "Wednesday", "start_time": "09:00:00", "end_time": "17:00:00", "date": "2024-10-09"},
+    {"employee_id": 1, "employee_name": "Alice Johnson", "day_of_week": "Friday", "start_time": "09:00:00", "end_time": "13:00:00", "date": "2024-10-11"},
+    
+    {"employee_id": 2, "employee_name": "Bob Smith", "day_of_week": "Tuesday", "start_time": "10:00:00", "end_time": "15:00:00", "date": "2024-10-08"},
+    {"employee_id": 2, "employee_name": "Bob Smith", "day_of_week": "Thursday", "start_time": "12:00:00", "end_time": "18:00:00", "date": "2024-10-10"},
+    {"employee_id": 2, "employee_name": "Bob Smith", "day_of_week": "Saturday", "start_time": "09:00:00", "end_time": "13:00:00", "date": "2024-10-12"},
+    
+    {"employee_id": 3, "employee_name": "Charlie Evans", "day_of_week": "Monday", "start_time": "08:00:00", "end_time": "12:00:00", "date": "2024-10-07"},
+    {"employee_id": 3, "employee_name": "Charlie Evans", "day_of_week": "Thursday", "start_time": "12:00:00", "end_time": "18:00:00", "date": "2024-10-10"},
+    {"employee_id": 3, "employee_name": "Charlie Evans", "day_of_week": "Sunday", "start_time": "10:00:00", "end_time": "16:00:00", "date": "2024-10-13"},
+    
+    {"employee_id": 4, "employee_name": "Richard Brown", "day_of_week": "Wednesday", "start_time": "13:00:00", "end_time": "17:00:00", "date": "2024-10-09"},
+    {"employee_id": 4, "employee_name": "Richard Brown", "day_of_week": "Friday", "start_time": "09:00:00", "end_time": "17:00:00", "date": "2024-10-11"},
+    
+    {"employee_id": 5, "employee_name": "Emma Taylor", "day_of_week": "Tuesday", "start_time": "14:00:00", "end_time": "18:00:00", "date": "2024-10-08"},
+    {"employee_id": 5, "employee_name": "Emma Taylor", "day_of_week": "Thursday", "start_time": "09:00:00", "end_time": "17:00:00", "date": "2024-10-10"},
+    {"employee_id": 5, "employee_name": "Emma Taylor", "day_of_week": "Saturday", "start_time": "10:00:00", "end_time": "16:00:00", "date": "2024-10-12"}
 ];
 
 console.log("Availability data:", availabilityData);
@@ -32,10 +37,10 @@ const timeOffRequests = [
 // Days of the week
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-// Dynamically generating dates based on the current week
+// Fix for correct date calculation, ensuring the week starts on Monday, October 7th, 2024
 const dates = [];
-const today = new Date();
-const firstDayOfWeek = new Date(today.setDate(today.getDate() - today.getDay() + 1)); // Start from Monday
+const firstDayOfWeek = new Date('2024-10-07'); // Fixed to ensure Monday starts correctly
+
 for (let i = 0; i < 7; i++) {
     const current = new Date(firstDayOfWeek);
     current.setDate(firstDayOfWeek.getDate() + i);
@@ -55,8 +60,6 @@ const dailyCustomerForecast = {
     'Sunday': [5, 8, 10, 7, 12, 14, 16, 15, 11, 9, 7, 4]
 };
 
-
-
 const overtimeVolunteers = [
     { "employee_id": 1, "employee_name": "Alice Johnson" },
     { "employee_id": 2, "employee_name": "Bob Smith" },
@@ -64,7 +67,6 @@ const overtimeVolunteers = [
     { "employee_id": 4, "employee_name": "Richard Brown" },
     { "employee_id": 5, "employee_name": "Emma Taylor" }
 ];
-
 
 // Employee data
 const employeeData = [

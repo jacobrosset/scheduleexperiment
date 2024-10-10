@@ -1,4 +1,16 @@
-/* General table styling */
+/* Styling for Breaks */
+.break {
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+/* Styling for Meal Periods */
+.meal {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+/* General Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -9,30 +21,20 @@ table, th, td {
     border: 1px solid black;
 }
 
-/* Header styling for dates and days of the week */
 th {
     background-color: lightgrey;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
     font-weight: bold;
 }
 
-/* Cell styling */
 td {
-    padding: 10px;
+    padding: 12px;
     text-align: center;
 }
 
-/* Total hours cell styling */
-.total-hours {
-    background-color: lightgrey;
-}
-
-
-/* Styling for time off */
-.time-off {
-background-color: lightcoral;
-padding: 10px;
-text-align: center;
-font-weight: bold;
+/* Total Meal Period Styling */
+.total-meal-period {
+    background-color: lightyellow;
+    font-weight: bold;
 }
